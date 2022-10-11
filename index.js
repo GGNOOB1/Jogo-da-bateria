@@ -13,6 +13,8 @@ for (let i = 0; i < numbersOfDrumButtons; i++) {
         // Nesta função colocamos como parâmetro a variavel letraSom
         makeSound(letraSom);
 
+        buttonAnimation(letraSom);
+
     });
 }
 
@@ -23,6 +25,8 @@ document.addEventListener("keydown", function (event) {
     // Nesta função utilizamos como parâmetro o evento mais a chave/letra especifíca do 
     // teclado que será determinada ao executar o switch case.
     makeSound(event.key);
+
+    buttonAnimation(event.key);
 })
 
 // Função que determina qual som será tocado a partir de tal letra clicável ou a cada imagem
@@ -68,4 +72,16 @@ function makeSound(key) {
         default:
             console.log(letraSom);
     }
+}
+
+function buttonAnimation(currentKey) {
+
+    var activeButton = document.querySelector("." + currentKey);
+    
+   activeButton.classList.add("pressed");
+
+   setTimeout(function (){
+        activeButton.classList.remove("pressed");
+
+   }, 100);
 }
