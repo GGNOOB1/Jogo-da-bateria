@@ -69,16 +69,3 @@ function makeSound(key) {
             console.log(letraSom);
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
